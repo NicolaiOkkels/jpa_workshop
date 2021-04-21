@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Varer</title>
+</head>
+<body>
+<h1>Vareliste</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Varenavn</th>
+            <th>Pris</th>
+            <th>Beskrivelse</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="product : ${products}">
+            <td th:text="${product.name}"></td>
+            <td th:text="${product.price}"></td>
+            <td th:text="${product.getDescription()}"></td>
+            <td><a th:href="@{'/update/' + ${product.id}}">opdater</a></td>
+            <td><a th:href="@{'/delete/' + ${product.id}}">slet</a></td>
+        </tr>
+    </tbody>
+</table>
+
+<a href="create">opret produkt</a>
+</body>
+</html>

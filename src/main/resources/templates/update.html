@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Opdater</title>
+</head>
+<body>
+<h1>Opdater produkt</h1>
+<form th:action="@{/update}" method="post">
+    <input type="text" name="name" value="name" th:field="${product.get().name}">
+    <input type="text" name="price" value="price" th:field="${product.get().price}">
+    <input type="text" name="description" value="description" th:field="${product.get().getDescription()}">
+    <button type="submit" value="Opdater"></button>
+</form>
+</body>
+</html>
